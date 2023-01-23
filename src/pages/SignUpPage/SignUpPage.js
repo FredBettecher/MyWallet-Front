@@ -5,7 +5,7 @@ import { Container, Title, Form, Input, Button, StyledLink } from "../../styles/
 export default function SignUp() {
     const navigate = useNavigate()
 
-    function handleLogin(e){
+    function handleSignUp(e){
         e.preventDefault();
 
         const body = {

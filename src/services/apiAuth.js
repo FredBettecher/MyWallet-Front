@@ -1,17 +1,35 @@
 import axios from "axios";
-import { useEffect } from "react";
-import dotenv from "dotenv";
 
-dotenv.config();
+const login = async (user) => {
+    try {
+        const { data } = await axios.post(process.env.REACT_APP_API_URL + "/", {
+            email: user.email,
+            password: user.password
+        });
 
-function login(body) {
-    const promise = axios.post(process.env.REACT_APP_API_URL + "/", body);
-    return promise;
+        return data;
+
+    } catch(err) {
+        console.log(err.response.data);
+        throw err;
+    }
 }
 
-function signUp(body) {
-    const promise = axios.post(REACT_APP_API_URL + "/cadastro", body);
-    return promise;
+const signUp = async (user) => {
+    try {
+        const { data } = await axios.post(process.env.REACT_APP_API_URL + "/cadastro", {
+            name: user.name,
+            email: user.email,
+            password: user.password,
+            confirmPassword: user.confirmPassword
+        });
+
+        return data;
+
+    } catch(err) {
+        console.log(err.response.data);
+        throw err;
+    }
 }
 
 const apiAuth = { login, signUp };

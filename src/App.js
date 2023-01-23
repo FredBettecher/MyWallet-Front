@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Deposit from './pages/DepositPage/DepositPage';
 import Home from './pages/HomePage/Homepage';
 import Login from './pages/LoginPage/LoginPage';
-import SignUp from './pages/SignUpPage/SingUpPage';
+import SignUp from './pages/SignUpPage/SignUpPage';
 import Withdraw from './pages/WithdrawPage/WithdrawPage';
 
 function App() {
